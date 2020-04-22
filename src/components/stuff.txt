@@ -1,0 +1,8 @@
+Name: C#
+Id: ms-dotnettools.csharp
+Description: C# for Visual Studio Code (powered by OmniSharp).
+Version: 1.21.17
+Publisher: Microsoft
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
+
+ms-dotnettools.csharp
