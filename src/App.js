@@ -3,6 +3,8 @@ import './App.css';
 import Resource from './components/Resource';
 import resources from './mock/resources';
 
+import ResourceForm from './components/ResourceForm';
+
 class App extends Component {
   //[<Resource resource={aResource} /> <Resource resource={aResource}]
   constructor(props){
@@ -23,11 +25,14 @@ class App extends Component {
       <div className="App">
         <div className="header">
           <h1 className="title">Welcome to BrainHive</h1>
-        
+          <div className="navigation">
+          <a href="/">Add Post</a>
+          </div>
         </div>
         <div className="resourceList">
           {this.renderPosts()}
         </div>
+        <ResourceForm />
       </div>
     );
   }
