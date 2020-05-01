@@ -7,14 +7,25 @@ import ResourceForm from './components/ResourceForm';
 
 class App extends Component {
   //[<Resource resource={aResource} /> <Resource resource={aResource}]
-  constructor(props){
-    super(props);
-    this.renderPosts.bind(this);
+  //constructor(props){
+  //  super(props);
+  //  this.renderPosts.bind(this);
+  //}
+  //Resource = require("./components/Resource");
+
+  state = {
+    resources: [...resources]
+  }
+
+  addResource = (newResource) => {
+    this.setState({
+      resources: [...this.state.resources, newResource]
+    })
   }
 
   renderPosts = () => {
-    const display = resources.map((resource) => {
-      return <Resource resource={resource} />;
+    const display = this.state.resources.map((resource) => {
+      return <Resource resource={resource} key={resource.title} />;
     });
 
     return display;
@@ -32,7 +43,7 @@ class App extends Component {
         <div className="resourceList">
           {this.renderPosts()}
         </div>
-        <ResourceForm />
+        <ResourceForm addResource={this.addResource}/>
       </div>
     );
   }
