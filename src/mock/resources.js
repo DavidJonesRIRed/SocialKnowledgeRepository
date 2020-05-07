@@ -1,5 +1,6 @@
 const resources = [
     {
+        id: 1,
         posterName: "Joel",
         resourceAuthor: "Traversy Media",
         authorSkillLevel: "Advance",
@@ -19,6 +20,7 @@ const resources = [
         ],
     },
     {
+        id: 2,
         posterName: "John F",
         resourceAuthor: "DevEd",
         authorSkillLevel: "Beginner",
@@ -39,6 +41,7 @@ const resources = [
         ],
     },
     {
+        id: 3,
         posterName: "Cliff Choiniere",
         resourceAuthor: "NetNinja",
         authorSkillLevel: "Advanced",
@@ -58,6 +61,7 @@ const resources = [
         ],
     },
     {
+        id: 4,
         posterName: "Chang",
         resourceAuthor: "Web Dev Simplified",
         authorSkillLevel: "Advanced",
@@ -77,6 +81,7 @@ const resources = [
         ],
     },
     {
+        id: 5,
         posterName: "Phen",
         resourceAuthor: "Web Simplified",
         authorSkillLevel: "Advanced",
@@ -96,6 +101,7 @@ const resources = [
         ],
     },
     {
+        id: 6,
         posterName: "Titus",
         resourceAuthor: "NetNinja",
         authorSkillLevel: "Advanced",
@@ -115,6 +121,7 @@ const resources = [
         ],
     },
     {
+        id: 7,
         posterName: "Darius",
         resourceAuthor: "Tech Sith",
         authorSkillLevel: "Advanced",
@@ -134,6 +141,7 @@ const resources = [
         ],
     },
     {
+        id: 8,
         posterName: "Holly",
         resourceAuthor: "Dave Ceddia",
         authorSkillLevel: "Advanced",
@@ -153,6 +161,7 @@ const resources = [
         ],
     },
     {
+        id: 9,
         posterName: "David",
         resourceAuthor: "Maximilian Schwarzmüller",
         authorsSkillLevel: "advanced",

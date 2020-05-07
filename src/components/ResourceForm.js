@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class ResourceForm extends Component{
     state ={
+        id: 0,
         posterName: "",
         resourceAuthor: "",
         authorSkillLevel: "",
@@ -30,7 +31,7 @@ class ResourceForm extends Component{
         // any data manipulation and validation
         const newResource = { ...this.state };
         newResource.categories = newResource.categories.split(',');
-        
+
         this.props.addResource(newResource);
         this.setState({
             posterName: "",

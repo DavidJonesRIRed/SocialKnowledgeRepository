@@ -7,7 +7,8 @@ const ResourceList = (props) => {
 
     const renderPosts = () => {
         const display = props.resources.map((resource) => {
-          return <Resource resource={resource} key={resource.title} />;
+          return <Resource resource={resource} key={resource.id}
+          onSelect={ props.onSelect } />;
         });
     
         return display;
