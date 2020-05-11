@@ -1,14 +1,52 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { Component } from 'react';
+import { useParams, withRouter } from 'react-router-dom';
+import Button from './common/Button';
 
-const ViewComponent = (props) =>{
-    const { course } = props;
-    const { id } = useParams();
-    return (
-        <h3>
-            { course.title }
-        </h3>
-    );
+class ViewCourse extends Component { 
+    state = {
+        showComments: false,
+    };
+
+    handleClick = () => {
+        this.setState({
+            showComments: !this.state.showComments,
+        })
+    };
+
+    renderComments = (course)  => {
+        return course.comments.map(comment => {
+            return (
+                <div className="box">
+                    <p>{ comment.user } :</p>
+                    <p>{ comment.text }</p>
+                </div>
+            );
+        });
+    };
+
+    render() { 
+        const { course } = this.props;
+        //const { id } = useParams();
+        const { id } = this.props.match.params;
+        console.log(id);
+        return (
+            <div>
+                <h3>{ course.title }</h3>
+                <h4> { course.resourceAuthor }</h4>
+                <p>{ course.summary }</p>
+                <p>{ course.link }</p>
+                <Button 
+                    onClick={ this.handleClick }
+                    buttonStyle= {{ backgroundColor: "green" }}
+                >
+                    {this.state.showComments ? "Hide Comments" : "Show Comments" }
+                </Button>
+                { this.state.showComments ? (
+                    this.renderComments(course) 
+                ) : null }
+            </div>
+        );
+    }
 };
 
-export default ViewComponent;
+export default withRouter(ViewCourse);
