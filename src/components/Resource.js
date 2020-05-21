@@ -20,12 +20,17 @@ class Resource extends Component {
         return(
             <div className={'box'} onClick={ this.handleClick }>
                 { this.state.clicked ? <Redirect to={`/viewCourse/${resource.id}`}/> : null }
-                <h2>{ resource.title } </h2>
-                <p>{ resource.resourceAuthor }</p>
-                <p>Published on: { resource.datePublished }</p>
-                { resource.videoLength ? ( <p>{ resource.videoLength }</p> ) : null }
-                { /* conditional / true code : false code */ }
-                <p>Comments: { resource.comments.length }</p>
+                <div className={'flipBoxInner'}>
+                    <div className={'flipBoxFront'}>
+                        <h2>{ resource.title } </h2>
+                    </div>
+                    <div className={'flipBoxBack'}>
+                        <p>{ resource.resourceAuthor }</p>
+                        <p>Published on: { resource.datePublished }</p>
+                        { resource.videoLength ? ( <p>{ resource.videoLength }</p> ) : null }
+                        <p>Comments: { resource.comments.length }</p>
+                    </div>
+                </div>
             </div>
         );
     }

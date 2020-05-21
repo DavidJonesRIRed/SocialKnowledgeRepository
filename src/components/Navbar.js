@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Menu from './common/Menu';
 
 const Navbar = (props) => {
     return(
@@ -8,7 +9,8 @@ const Navbar = (props) => {
             <Link to="/">Welcome to BrainHive</Link>
           </h1>
           <div className="navigation">
-            <Link to="/addResource">Add Resource</Link>
+            {/*<Link to="/addResource">Add Resource</Link>*/}
+            <Menu />
           </div>
         </div>
     )
