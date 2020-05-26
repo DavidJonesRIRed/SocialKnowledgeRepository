@@ -8,7 +8,7 @@ const Menu = () => {
     <input type="checkbox" className="toggler">
     </input>
     <div className="hamburger"><div></div></div>
-      <div className="menu">
+      <div className="menu"  >
         <div>
             <div>
                 <ul>
