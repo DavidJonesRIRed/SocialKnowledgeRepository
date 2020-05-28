@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from "react-redux";
+import { changeForm, submitForm } from "../actions";
 import Button from './common/Button';
 
 class ResourceForm extends Component{
@@ -21,38 +23,17 @@ class ResourceForm extends Component{
     };
 
     handleChange = (e) => {
-        this.setState({
-            ...this.state,
-            [e.target.id]: e.target.value,
-        });
+        this.props.changeForm(e.target.id, e.target.value);
     };
 
     handleSubmit= (e) => {
         e.preventDefault();
-        // any data manipulation and validation
-        const newResource = { ...this.state };
-        newResource.categories = newResource.categories.split(',');
-
-        this.props.addResource(newResource);
-        this.setState({
-            posterName: "",
-            resourceAuthor: "",
-            authorSkillLevel: "",
-            cohort: "",
-            title: "",
-            categories: "",
-            summary: "",
-            link: "",
-            resourceType: "",
-            datePublished: "",
-            videoLength: "",
-            timeToComplete: "",
-            rating: "",
-            comments: [],
-        });
+        this.props.submitForm(this.props.formResourceReducer.form);
     };
 
     render(){
+        const { form } = this.props.formResourceReducer;
+
         return(
             <div className>
                 <form style={ styles.form } onSubmit={ this.handleSubmit }>
@@ -178,4 +159,17 @@ const styles = {
     },
 };
 
-export default ResourceForm;
+const mapStoreToProps = (store) => {
+    return {
+      formResourceReducer: store.formResourceReducer,
+    };
+  };
+  
+  const mapActionsToProps = () => {
+    return {
+      changeForm,
+      submitForm,
+    };
+  };
+
+  export default connect(mapStoreToProps, mapActionsToProps())(ResourceForm);
