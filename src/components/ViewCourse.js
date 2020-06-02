@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { useParams, withRouter } from 'react-router-dom';
+import { connect } from "react-redux";
 import Button from './common/Button';
 
 class ViewCourse extends Component { 

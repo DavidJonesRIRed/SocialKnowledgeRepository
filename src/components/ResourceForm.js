@@ -5,7 +5,7 @@ import Button from './common/Button';
 
 class ResourceForm extends Component{
     state ={
-        id: 0,
+       /* id: 0,
         posterName: "",
         resourceAuthor: "",
         authorSkillLevel: "",
@@ -19,7 +19,7 @@ class ResourceForm extends Component{
         videoLength: "",
         timeToComplete: "",
         rating: "",
-        comments: [],
+        comments: [], */
     };
 
     handleChange = (e) => {
@@ -42,20 +42,20 @@ class ResourceForm extends Component{
                         style={ styles.input } 
                         id="posterName" type="text" 
                         placeholder="Your Name"
-                        value={ this.state.posterName } 
+                        value={  form.posterName } 
                         onChange={ this.handleChange } />
                     <br />
                     <input 
                         style={ styles.input } 
                         id="resourceAuthor" type="text" 
                         placeholder="Resource Author"
-                        value={ this.state.resourceAuthor}
+                        value={  form.resourceAuthor}
                         onChange={ this.handleChange } />
                     { /* dropmenu for author level */}
                     <div>
                         <select 
                         id="authorSkillLevel"
-                        value={ this.state.authorSkillLevel }
+                        value={  form.authorSkillLevel }
                         onChange={ this.handleChange }
                         >
                         <option value="" disabled>
@@ -70,20 +70,20 @@ class ResourceForm extends Component{
                         style={ styles.input } 
                         id="cohort" type="text" 
                         placeholder="Cohort #"
-                        value={ this.state.cohort }
+                        value={  form.cohort }
                         onChange={ this.handleChange } />
                     <input 
                         style={ styles.input } 
                         id="title" type="text" 
                         placeholder="Resource Title"
-                        value={ this.state.title } 
+                        value={  form.title } 
                         onChange={ this.handleChange } />
                         <input
                         style={styles.input}
                         type="text"
                         id="categories"
                         placeholder="Categories (seperate multiples with commas)"
-                        value={this.state.categories}
+                        value={ form.categories}
                         onChange={(e) => this.handleChange(e)}
                       />
                       <input
@@ -91,7 +91,7 @@ class ResourceForm extends Component{
                         type="text"
                         id="link"
                         placeholder="Resource Link"
-                        value={this.state.link}
+                        value={ form.link}
                         onChange={(e) => this.handleChange(e)}
                       />
                       <input
@@ -99,7 +99,7 @@ class ResourceForm extends Component{
                         type="text"
                         id="resourceType"
                         placeholder="Resource Type"
-                        value={this.state.resourceType}
+                        value={ form.resourceType}
                         onChange={(e) => this.handleChange(e)}
                       />
                       <input
@@ -107,7 +107,7 @@ class ResourceForm extends Component{
                         type="date"
                         id="datePublished"
                         placeholder="Published Date"
-                        value={this.state.datePublished}
+                        value={ form.datePublished}
                         onChange={(e) => this.handleChange(e)}
                       />
                       <input
@@ -115,7 +115,7 @@ class ResourceForm extends Component{
                         type="text"
                         id="videoLength"
                         placeholder="Length of Video (optional)"
-                        value={this.state.videoLength}
+                        value={ form.videoLength}
                         onChange={(e) => this.handleChange(e)}
                       />
                       <input
@@ -123,7 +123,7 @@ class ResourceForm extends Component{
                         type="text"
                         id="timeToComplete"
                         placeholder="Time to complete resource"
-                        value={this.state.timeToComplete}
+                        value={ form.timeToComplete}
                         onChange={(e) => this.handleChange(e)}
                       />
                       <input
@@ -131,7 +131,7 @@ class ResourceForm extends Component{
                         type="number"
                         id="rating"
                         placeholder="1 to 5 rating"
-                        value={this.state.rating}
+                        value={ form.rating}
                         onChange={(e) => this.handleChange(e)}
                       />
                     <Button text="Submit" type="submit" />
