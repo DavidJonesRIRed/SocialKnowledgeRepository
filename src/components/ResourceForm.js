@@ -22,6 +22,10 @@ class ResourceForm extends Component{
         comments: [], */
     };
 
+    handleClick = () => {
+      this.props.increment(this.props.count);
+    };
+    
     handleChange = (e) => {
         this.props.changeForm(e.target.id, e.target.value);
     };

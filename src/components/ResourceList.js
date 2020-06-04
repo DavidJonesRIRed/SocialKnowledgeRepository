@@ -1,16 +1,18 @@
 import React, { Component }from 'react';
+import { connect } from 'react-redux';
+import { increment } from '../actions';
 import Resource from './Resource';
 
 
 class ResourceList extends Component {
   state = {
     query:"",
-    searchedResources: [ ...this.props.resources ]
+    searchedResources: [ ...this.props.resources.list ]
   };
 
   handleChange = (e) => {
     const query = e.target.value;
-    const newList = this.props.resources.filter(resource => {
+    const newList = this.props.resources.list.filter((resource) => {
       if(resource.title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
         return true;
       }
@@ -78,4 +80,13 @@ const myStyles = {
   },
 };
 
-export default ResourceList;
+const mapStoreToProps = (store) => {
+  return {
+    count: store.resources.count,
+    resources: store.resources,
+  };
+};
+
+export default connect(mapStoreToProps, {
+  increment,
+})(ResourceList);
